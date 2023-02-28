@@ -1,0 +1,12 @@
+@import "./../../../../global/variables.scss";
+
+.navLink {
+  padding: 0 0.8em;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $JuliusSansOne;
+  font-size: 1.4rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
