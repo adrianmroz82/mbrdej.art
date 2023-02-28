@@ -16,9 +16,6 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }: ButtonProp
   const checkButtonStyle = STYLES.includes(buttonStyle!) ? buttonStyle : STYLES[0];
 
   const checkButtonSize = SIZES.includes(buttonSize!) ? buttonSize : SIZES[0];
-  console.log(type);
-  console.log(buttonStyle);
-  console.log(buttonSize);
 
   return (
     <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} type={type} onClick={onClick}>
