@@ -1,7 +1,7 @@
 # Brdej.art - Project Overview
 
 This project is a portfolio site for a friend of mine artist
-Although it is not finished, gallery page can be seen [here](brdej-art.vercel.app/gallery).
+Although it is not finished, gallery page can be seen [here](https://brdej-art.vercel.app/gallery).
 
 
 # Tech stack
