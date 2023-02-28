@@ -1,0 +1,184 @@
+{
+  "imagesInfo": [
+    {
+      "id": "0",
+      "name": "Tatry Zachodnie",
+      "dimensions": "50x70",
+      "type": "oil"
+    },
+    {
+      "id": "1",
+      "name": "Kalatówki",
+      "dimensions": "30x40",
+      "type": "oil"
+    },
+    {
+      "id": "2",
+      "name": "Gandalf",
+      "dimensions": "70x50",
+      "type": "oil"
+    },
+    {
+      "id": "3",
+      "name": "Łodzie (kopia)",
+      "dimensions": "60x40",
+      "type": "oil"
+    },
+    {
+      "id": "4",
+      "name": "Polana",
+      "dimensions": "50x70",
+      "type": "oil"
+    },
+    {
+      "id": "5",
+      "name": "Las 2",
+      "dimensions": "60x40",
+      "type": "oil"
+    },
+    {
+      "id": "6",
+      "name": "Las",
+      "dimensions": "60x40",
+      "type": "oil"
+    },
+    {
+      "id": "7",
+      "name": "Biało",
+      "dimensions": "70x50",
+      "type": "oil"
+    },
+    {
+      "id": "8",
+      "name": "Biało 2",
+      "dimensions": "70x50",
+      "type": "oil"
+    },
+    {
+      "id": "9",
+      "name": "Tygrys",
+      "dimensions": "40x40",
+      "type": "oil"
+    },
+    {
+      "id": "10",
+      "name": "Bilbo",
+      "dimensions": "50x70",
+      "type": "oil"
+    },
+    {
+      "id": "11",
+      "name": "Czerwone wierchy",
+      "dimensions": "50x70",
+      "type": "oil"
+    },
+    {
+      "id": "12",
+      "name": "Wodospad Islandii",
+      "dimensions": "70x90",
+      "type": "oil"
+    },
+    {
+      "id": "13",
+      "name": "Kwiaty Islandii",
+      "dimensions": "30x40",
+      "type": "oil"
+    },
+    {
+      "id": "14",
+      "name": "Panorama Krakowa (kopia)",
+      "dimensions": "60x100",
+      "type": "oil"
+    },
+    {
+      "id": "15",
+      "name": "Konie (kopia)",
+      "dimensions": "70x90",
+      "type": "oil"
+    },
+    {
+      "id": "16",
+      "name": "Caorle",
+      "dimensions": "50x70",
+      "type": "oil"
+    },
+    {
+      "id": "17",
+      "name": "Niebieski ptak",
+      "dimensions": "18x14",
+      "type": "oil"
+    },
+    {
+      "id": "18",
+      "name": "Góra",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "19",
+      "name": "Pomarańczowy(łąka)",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "20",
+      "name": "Fara",
+      "dimensions": "25x30",
+      "type": "oil"
+    },
+    {
+      "id": "21",
+      "name": "Czernice",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "22",
+      "name": "Drzewo",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "23",
+      "name": "Kopa Kondracka",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "24",
+      "name": "Burza",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "25",
+      "name": "Żonkile",
+      "dimensions": "40x30",
+      "type": "oil"
+    },
+    {
+      "id": "26",
+      "name": "Tatrzańskie słońce",
+      "dimensions": "40x30",
+      "type": "oil"
+    },
+    {
+      "id": "27",
+      "name": "Biały las",
+      "dimensions": "40x40",
+      "type": "oil"
+    },
+    {
+      "id": "28",
+      "name": "White Cosmos",
+      "dimensions": "20x20",
+      "type": "oil"
+    },
+    {
+      "id": "28",
+      "name": "White Cosmos 2",
+      "dimensions": "20x20",
+      "type": "oil"
+    }
+  ]
+}
