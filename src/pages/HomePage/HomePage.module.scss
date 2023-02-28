@@ -1,0 +1,137 @@
+// @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@397&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+// .body-container {
+//   background-color: #090e18;
+//   min-height: 100vh;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   object-fit: contain;
+//   color: red;
+//   z-index: 5;
+// }
+
+// .body-btns {
+//   margin-top: 32px;
+//   display: initial;
+//   background-color: transparent;
+//   z-index: 100;
+//   opacity: 0;
+//   animation-name: btns;
+//   animation-duration: 3s;
+//   animation-delay: 0.5s;
+//   animation-fill-mode: forwards;
+// }
+
+// .btn {
+//   transition-property: background, border-radius;
+//   transition-duration: 1s;
+//   // transition-delay: 1s;
+//   transition-timing-function: ease-out;
+//   position: relative;
+// }
+
+// .btn::after,
+// .btn::before {
+//   // border: 3px solid #3a10d9;
+//   background-color: #3a10d9;
+//   content: "";
+//   position: absolute;
+//   width: calc(100% - 10px);
+//   height: calc(100% - 10px);
+//   z-index: -1;
+//   left: 0;
+//   bottom: 0;
+//   transition: transform 0.3s ease;
+// }
+
+// .btn:hover::after {
+//   transform: translate(15px, 15px);
+//   background-color: #ffd300;
+//   animation-delay: 2s;
+//   transition-duration: 1s;
+// }
+// .btn:hover::before {
+//   transform: translate(15px, 15px);
+// }
+
+// @keyframes btns {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 100;
+//   }
+// }
+
+// .body-btns .btn {
+//   margin: 14px;
+// }
+
+// .fa-play-circle {
+//   margin-left: 4px;
+// }
+
+// @media screen and (max-width: 960px) {
+//   .body-container > h2 {
+//     font-size: 70px;
+//     margin-top: -150px;
+//   }
+//   .body-container > p {
+//     font-size: 40px;
+//     justify-content: center;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .body-container > h2,
+//   p {
+//     font-size: 40px;
+//     margin-top: -100px;
+//     text-align: center;
+//   }
+
+//   .body-container > p {
+//     font-size: 30px;
+//   }
+
+//   .btn-mobile {
+//     display: block;
+//     text-decoration: none;
+//   }
+
+//   .btn {
+//     width: 100%;
+//   }
+// }
+
+// @keyframes animate {
+//   0%,
+//   10%,
+//   100% {
+//     width: 0;
+//   }
+//   50% {
+//     width: 100%;
+//   }
+//   100% {
+//     width: 100%;
+//   }
+// }
+
+.homeContainer {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  z-index: 999;
+}

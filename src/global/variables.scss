@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@397&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap");
+
+// $Cream: #f9ead7;
+$Cream: white;
+$CreamLight: #f6f1eb;
+$GrayLight: #596275;
+$GrayDark: #303952;
+$PurpleDark: #574b90;
+$PurpleLight: #786fa6;
+$BlueLight: #778beb;
+$BlueDark: #546de5;
+$BlackLight: #3d3d3d;
+
+$JetBrains: "JetBrains Mono", monospace;
+$JuliusSansOne: "Julius Sans One", sans-serif;
+$BlackHanSans: "Black Han Sans", sans-serif;
+$FrederickaTheGreat: "Fredericka the Great", cursive;
+$RedHat: "Red Hat Display", sans-serif;
+
+@font-face {
+  font-family: "Orator";
+  src: url(./../assets/fonts/ORATOR10.ttf);
+}
+
+@font-face {
+  font-family: "Art History Book";
+  src: url(./../assets/fonts/History_book.otf);
+}
+
+@font-face {
+  font-family: "Sketch";
+  src: url(./../assets/fonts/Sketch.otf);
+}
+
+@font-face {
+  font-family: "Limoen";
+  src: url(./../assets/fonts/Limoen.otf);
+}
