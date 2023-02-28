@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
+// @ts-ignore
 import { projectStorage } from "../../firebase/config";
 import LoadableImage from "../../components/LoadableImage/LoadableImage";
 
 import { ref as dbRef, onValue } from "firebase/database";
-import { db } from "./../../firebase/config";
+// @ts-ignore
+import { db } from "../../firebase/config";
 
 import cx from "classnames";
 import styles from "./GalleryPage.module.scss";

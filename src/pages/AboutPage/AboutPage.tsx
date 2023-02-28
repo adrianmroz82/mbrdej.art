@@ -1,4 +1,4 @@
-import About from "../../components/Parallax/Parallax";
+// import About from "../../components/Parallax/Parallax";
 // import { motion } from "framer-motion/dist/es/index";
 
 const AboutPage = () => {
