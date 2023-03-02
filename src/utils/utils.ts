@@ -7,3 +7,7 @@ export function direct(route: string) {
 export function redirect(route: string) {
   window.location.href = route;
 }
+
+export function isMobile() {
+  return window.innerWidth <= 600;
+}

@@ -12,7 +12,7 @@ import { db } from "../../firebase/config";
 
 import cx from "classnames";
 import styles from "./GalleryPage.module.scss";
-// import "./test.css";
+import "./test.css";
 
 interface ImagesInfoArrayI {
   dimensions: string;
@@ -36,13 +36,6 @@ const GalleryPage = () => {
     setTempImgSrc(imgSrc);
   };
 
-  useEffect(() => {
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      setImagesInfoArray(data);
-    });
-  }, []);
-
   const fetchImages = async () => {
     const imagesListRef = ref(projectStorage, "imagesMin/");
     const listAllRefs = await listAll(imagesListRef);
@@ -51,6 +44,11 @@ const GalleryPage = () => {
   };
 
   useEffect(() => {
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setImagesInfoArray(data);
+    });
+
     fetchImages();
   }, []);
 
@@ -79,16 +77,24 @@ const GalleryPage = () => {
   return (
     <>
       <div
-        className={cx(styles.model, {
-          [styles.modelOpen]: model,
-        })}>
-        {/* // className={model ? "model open" : "model"}> */}
+        className={model ? "model open" : "model"}
+        // className={cx(styles.model, {
+        //   [styles.modelOpen]: model,
+        // })}
+      >
         <img className={styles.modelImg} src={tempImgSrc} alt="" />
         <div onClick={() => setModel(false)} className={styles.closeIcon}>
           <CloseIcon fontSize="large" style={{ color: "white" }} />
         </div>
       </div>
-      <h1 className={styles.portfolio}>Portfolio</h1>
+      <div className={styles.galleryHeader}>
+        <h1 className={styles.galleryTitle}>Galeria Obrazów</h1>
+        <div className={styles.galleryText}>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime repudiandae fugiat corrupti? Numquam impedit
+          nisi fugiat quos, sequi iusto vero itaque provident doloribus nesciunt molestias placeat deserunt quasi soluta
+          assumenda.
+        </div>
+      </div>
       <div className={styles.gallery}>
         {imagesInfoArray?.map((item, index) => {
           return (
