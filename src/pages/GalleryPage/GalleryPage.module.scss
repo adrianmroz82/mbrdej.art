@@ -10,6 +10,7 @@
   background-color: $Cream;
   align-items: center;
   justify-content: center;
+  margin-top: 5rem;
 }
 
 .pic {
@@ -90,12 +91,29 @@
   cursor: pointer;
 }
 
-.portfolio {
+.galleryHeader {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  font-family: $JuliusSansOne;
-  font-size: 5rem;
-  margin-bottom: 2rem;
+  padding-top: 4rem;
+  width: 100%;
+  background-color: $CreamLight;
+
+  > .galleryTitle {
+    font-family: $JuliusSansOne;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  > .galleryText {
+    font-family: $JuliusSansOne;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 80%;
+    padding-bottom: 2rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -126,8 +144,10 @@
   object-fit: cover;
   cursor: pointer;
   justify-self: center;
+
   &:hover {
     filter: opacity(1);
+
     > .imageInfo {
       opacity: 1;
       transform: translateY(50);
