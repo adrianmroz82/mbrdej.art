@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MediaIcon from "../MediaIcon";
 import classes from "./Footer.module.scss";
 
 const Footer = () => {
@@ -6,24 +7,12 @@ const Footer = () => {
     <div className={classes.footerContainer}>
       <div className={classes.footerInfo}>
         <motion.div className={classes.mediaIcons}>
-          <a href="https://www.facebook.com/mbrdej.art" target="_blank" rel="noreferrer">
-            <motion.i
-              whileHover={{ scale: 1.3 }}
-              style={{ marginRight: "20px", textDecoration: "none", color: "black" }}
-              className="fa-brands fa-facebook"></motion.i>
-          </a>
-          <a href="https://www.instagram.com/mbrdej.art" target="_blank" rel="noreferrer">
-            <motion.i
-              whileHover={{ scale: 1.3 }}
-              style={{ marginRight: "20px", textDecoration: "none", color: "black" }}
-              className="fa-brands fa-instagram"></motion.i>
-          </a>
-          <a href="https://www.etsy.com/pl/shop/mbrdejart?ref=seller-platform-mcnav" target="_blank" rel="noreferrer">
-            <motion.i
-              whileHover={{ scale: 1.3 }}
-              style={{ marginRight: "20px", textDecoration: "none", color: "black" }}
-              className="fa-brands fa-etsy"></motion.i>
-          </a>
+          <MediaIcon className="fa-brands fa-facebook" href="https://www.facebook.com/mbrdej.art" />
+          <MediaIcon className="fa-brands fa-instagram" href="https://www.instagram.com/mbrdej.art" />
+          <MediaIcon
+            className="fa-brands fa-etsy"
+            href="https://www.etsy.com/pl/shop/mbrdejart?ref=seller-platform-mcnav"
+          />
         </motion.div>
       </div>
     </div>
