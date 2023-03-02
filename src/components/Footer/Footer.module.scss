@@ -1,5 +1,21 @@
-.container {
+@import "./../../global/variables.scss";
+
+.footerContainer {
   display: flex;
   justify-content: center;
-  padding-bottom: 10px;
+  margin-top: 5rem;
+  // height: 10vh;
+  background-color: $CreamLight;
+  align-items: center;
+  // position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerInfo {
+}
+
+.mediaIcons {
+  margin: 15px 30px 20px 20px;
+  font-size: 2rem;
 }
