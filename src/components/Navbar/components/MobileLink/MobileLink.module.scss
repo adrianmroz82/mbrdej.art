@@ -1,0 +1,17 @@
+@import "./src/global/variables.scss";
+
+.navbarItem {
+  margin: 2rem;
+  font-size: 4rem;
+  color: white;
+  user-select: none;
+  text-decoration: none;
+  transition: background 0.5s ease-in, margin 1s, padding 0.5s ease-in, border-bottom 0.5s ease-in;
+
+  &:hover {
+    margin: 80px;
+    margin-left: 100px;
+    padding: 0 10px;
+    border-bottom: 2px solid $Cream;
+  }
+}
