@@ -1,44 +1,31 @@
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import styles from "./ContactPage.module.scss";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactPage = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const [state, handleSubmit] = useForm("xjvdorvl");
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    emailjs.sendForm("service_25ss3ln", "template_u3x0bur", form.current!, "JnY10kn0LB3terrkm").then(
-      (result) => {
-        console.log(result);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-  };
-
-  //handle  error icon and warning info ->
-  // Please enter a valid email address.
-  // Please enter a name
+  //   if (state.succeeded) {
+  //     return <p>Thanks for joining!</p>;
+  // }
 
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.formBox}>
-        <form className={styles.form} ref={form} onSubmit={sendEmail}>
-          <label htmlFor="name">Name</label>
-          <input type="name" name="name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form>
-      </div>
-    </div>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
+      <label htmlFor="email">Email Address</label>
+      <input id="email" type="email" name="email" />
+      <ValidationError prefix="Email" field="email" errors={state.errors} />
+      <textarea id="message" name="message" />
+      <ValidationError prefix="Message" field="message" errors={state.errors} />
+      {state.errors.length
+        ? state.errors.map((e) => (
+            <p key={e.message}>{e.code === "EMPTY" && "Uzupełnij pola przed wysłaniem wiadomości"}</p>
+          ))
+        : null}
+      {state.succeeded ? <p>Dziękujemy za wiadomość!</p> : null}
+      <button type="submit" disabled={state.submitting}>
+        Wyślij
+      </button>
+    </form>
   );
 };
-export default ContactPage;
 
-// service_25ss3ln
-// template_u3x0bur
+export default ContactPage;
