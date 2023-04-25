@@ -1,15 +1,14 @@
-@import "./../../global/variables.scss";
+@import "./src/global/variables.scss";
 
 .footerContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-  // height: 10vh;
-  background-color: $CreamLight;
-  align-items: center;
-  // position: absolute;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: $CreamLight;
+  margin-top: 5rem;
+  box-shadow: 0 0 10px 0 rgb(1 1 0 / 6%);
 }
 
 .footerInfo {
@@ -17,5 +16,18 @@
 
 .mediaIcons {
   margin: 15px 30px 20px 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px; //30
+  height: 15px; //30
+  border-radius: 50%;
+  // border: 2px solid red;
+  background-color: black;
+  // mix-blend-mode: difference;
+  pointer-events: none;
 }

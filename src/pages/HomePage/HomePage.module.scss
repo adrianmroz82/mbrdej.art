@@ -127,12 +127,12 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.buttonContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+}
+.buttonContainer {
+  // height: 95vh;
   z-index: 999;
   // pointer-events: none;
 }

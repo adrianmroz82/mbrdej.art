@@ -8,11 +8,13 @@ import GalleryPage from "./GalleryPage";
 import HomePage from "./HomePage";
 import OrdersPage from "./OrdersPage";
 
+
+
 export const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route element={<WithoutNav />}>
           <Route path="/" element={<HomePage />} />

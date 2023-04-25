@@ -1,4 +1,10 @@
-@import "./../../global/variables.scss";
+@import "./src/global/variables.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@397&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap");
 
 .gallery {
   display: grid;
@@ -97,18 +103,25 @@
   align-items: center;
   justify-content: center;
   padding-top: 4rem;
-  width: 100%;
-  background-color: $CreamLight;
+  // width: 100%;
+  // background-color: $LogoColor;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(1, 1, 0, 0.055);
 
   > .galleryTitle {
     font-family: $JuliusSansOne;
     font-size: 5rem;
+    font-size: 5vw;
     margin-bottom: 1rem;
   }
 
   > .galleryText {
     font-family: $JuliusSansOne;
     font-size: 1.8rem;
+    font-size: 2vw;
+
     margin-bottom: 2rem;
     text-align: center;
     width: 80%;

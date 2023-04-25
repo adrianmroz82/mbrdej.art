@@ -12,7 +12,8 @@ const MediaIcon = ({ scale, className, href }: Props) => {
       <motion.i
         whileHover={{ scale: scale || 1.3 }}
         style={{ marginRight: "20px", textDecoration: "none", color: "black" }}
-        className={className}></motion.i>
+        className={className}
+      />
     </a>
   );
 };

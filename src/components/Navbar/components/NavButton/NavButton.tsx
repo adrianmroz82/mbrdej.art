@@ -10,11 +10,13 @@ interface Props {
 
 const NavButton = ({ route, name }: Props) => {
   return (
-    <motion.h4 variants={header} whileHover={{ scale: 1.1 }}>
-      <Link className={styles.navLink} to={route}>
-        {name}
-      </Link>
-    </motion.h4>
+    <>
+      <motion.h4 variants={header} whileHover={{ scale: 1.1 }}>
+        <Link className={styles.navLink} to={route}>
+          {name}
+        </Link>
+      </motion.h4>
+    </>
   );
 };
 

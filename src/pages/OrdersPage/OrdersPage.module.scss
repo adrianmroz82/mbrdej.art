@@ -1,3 +1,5 @@
+@import "./src/global/variables.scss";
+
 .container {
   display: flex;
   flex-direction: row;
@@ -16,7 +18,7 @@
 
     img {
       max-width: 100%;
-      max-height: calc(120vh);
+      max-height: calc(120vh - 10rem);
     }
   }
 
@@ -30,10 +32,12 @@
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      font-family: $Raleway;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      font-family: $Raleway;
     }
   }
 }

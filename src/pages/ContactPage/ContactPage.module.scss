@@ -1,23 +1,21 @@
 .formContainer {
-  max-height: 90vh;
   display: flex;
+  flex-direction: column;
+  max-height: 90vh;
 
-  justify-content: center;
-}
-
-.formBox {
   border: 1px solid black;
   border-radius: 20px;
   align-items: center;
   height: 60vh;
-  width: 600px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
+  max-width: 400px;
   justify-content: center;
   align-items: flex-start;
   padding: 30px;
-  // margin: 30px;
+
+  > label {
+    // background-color: red;
+  }
+
+  > input {
+  }
 }
