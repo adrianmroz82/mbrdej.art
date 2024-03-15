@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import MediaIcon from "../MediaIcon";
+import { MediaIcon } from "../MediaIcon/MediaIcon";
+
 import classes from "./Footer.module.scss";
 
-const Footer = () => {
+export function Footer() {
   return (
     <motion.div className={classes.footerContainer}>
       <div className={classes.footerInfo}>
@@ -17,6 +18,4 @@ const Footer = () => {
       </div>
     </motion.div>
   );
-};
-
-export default Footer;
+}

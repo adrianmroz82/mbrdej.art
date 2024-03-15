@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { header } from "../../../../animations/animations";
+
 import styles from "./NavButton.module.scss";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
   name: string;
 }
 
-const NavButton = ({ route, name }: Props) => {
+export function NavButton({ route, name }: Props) {
   return (
     <>
       <motion.h4 variants={header} whileHover={{ scale: 1.1 }}>
@@ -18,6 +19,4 @@ const NavButton = ({ route, name }: Props) => {
       </motion.h4>
     </>
   );
-};
-
-export default NavButton;
+}

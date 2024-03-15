@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
-
 import CloseIcon from "@mui/icons-material/Close";
+
 import { getDownloadURL, listAll, ref } from "firebase/storage";
-// @ts-ignore
 import { projectStorage } from "../../firebase/config";
-import LoadableImage from "../../components/LoadableImage/LoadableImage";
-
+import { LoadableImage } from "../../components/LoadableImage/LoadableImage";
 import { ref as dbRef, onValue } from "firebase/database";
-// @ts-ignore
 import { db } from "../../firebase/config";
+import { Spinner } from "../../components/Spinner/Spinner";
 
-import cx from "classnames";
 import styles from "./GalleryPage.module.scss";
-import "./test.css";
-
 interface ImagesInfoArrayI {
   dimensions: string;
   id: string;
@@ -22,7 +17,7 @@ interface ImagesInfoArrayI {
   link?: string;
 }
 
-const GalleryPage = () => {
+export function GalleryPage() {
   const [model, setModel] = useState(false);
   const [tempImgSrc, setTempImgSrc] = useState("");
 
@@ -52,14 +47,6 @@ const GalleryPage = () => {
     fetchImages();
   }, []);
 
-  const Spinner = () => {
-    return (
-      <div className="spinner-container">
-        <div className="loading-spinner"></div>
-      </div>
-    );
-  };
-
   if (!imagesArray) {
     return (
       <div>
@@ -76,17 +63,14 @@ const GalleryPage = () => {
 
   return (
     <>
-      <div
-        className={model ? "model open" : "model"}
-        // className={cx(styles.model, {
-        //   [styles.modelOpen]: model,
-        // })}
-      >
+      {/* <div className={model ? "model open" : "model"}> */}
+      <div className={model ? `${styles.model} ${styles.open}` : styles.model}>
         <img className={styles.modelImg} src={tempImgSrc} alt="" />
         <div onClick={() => setModel(false)} className={styles.closeIcon}>
           <CloseIcon fontSize="large" style={{ color: "white" }} />
         </div>
       </div>
+      {/* TODO: Extract to HeaderSection Component */}
       <div className={styles.galleryHeader}>
         <h1 className={styles.galleryTitle}>Galeria Obrazów</h1>
         <div className={styles.galleryText}>
@@ -111,5 +95,4 @@ const GalleryPage = () => {
       </div>
     </>
   );
-};
-export default GalleryPage;
+}

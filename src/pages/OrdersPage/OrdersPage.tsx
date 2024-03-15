@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import styles from "./OrdersPage.module.scss";
+
 import forest_orders from "./../../assets/images/forest_orders.jpg";
 import { stagger, star } from "../../animations/animations";
 
-const OrdersPage = () => {
+import styles from "./OrdersPage.module.scss";
+
+export function OrdersPage() {
   return (
     <motion.div initial="initial" animate="animate" variants={stagger} className={styles.container}>
       <motion.div variants={star} className={styles.leftContainer}>
@@ -19,6 +21,4 @@ const OrdersPage = () => {
       </motion.div>
     </motion.div>
   );
-};
-
-export default OrdersPage;
+}

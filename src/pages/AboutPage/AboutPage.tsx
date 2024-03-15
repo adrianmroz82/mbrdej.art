@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import useCustomCursor from "../../utils/useCustomCursor";
 import { SECTION1, SECTION2, SECTION3, SECTION4, SECTION5 } from "./content";
+
 import "./styles.scss";
 
 const text = "about me";
@@ -98,35 +98,10 @@ const btnGroup = {
   },
 };
 
-const header = {
-  initial: {
-    y: -60,
-    opacity: 0,
-    transition: { duration: 0.05, ease: easeing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    // animation: {
-    //   duration: 0.6,
-    //   ease: easeing,
-    // },
-  },
-};
-// const stagger = {
-//   animate: {
-//     transition: {
-//       delayChildren: 0.4,
-//       staggerChildren: 0.2,
-//       staggerDirection: 1,
-//     },
-//   },
-// };
-
 const name = ["L", "o", "r", "e", "m", " ", "I", "p", "s", "u", "m"];
 const sentence = ["D", "o", "l", "o", "r", " ", "s", "i", "t", " ", "a", "m", "e", "t"];
 
-const AboutMe = () => {
+export function AboutPage() {
   return (
     <motion.div initial="initial" animate="animate">
       <motion.div
@@ -166,6 +141,4 @@ const AboutMe = () => {
       </motion.div>
     </motion.div>
   );
-};
-
-export default AboutMe;
+}
