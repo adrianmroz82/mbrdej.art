@@ -8,8 +8,10 @@ import { AboutPage } from "./AboutPage/AboutPage";
 import { ContactPage } from "./ContactPage/ContactPage";
 import { GalleryPage } from "./GalleryPage/GalleryPage";
 import { OrdersPage } from "./OrdersPage/OrdersPage";
+import { SignInPage } from "./SignInPage/SignInPage";
+import { AdminPage } from "./AdminPage/AdminPage";
 
-export const AnimatedRoutes = () => {
+export function AnimatedRoutes() {
   const location = useLocation();
 
   return (
@@ -17,6 +19,8 @@ export const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route element={<WithoutNav />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Route>
         <Route element={<WithNav />}>
           <Route path="/about" element={<AboutPage />} />
@@ -27,4 +31,4 @@ export const AnimatedRoutes = () => {
       </Routes>
     </AnimatePresence>
   );
-};
+}
