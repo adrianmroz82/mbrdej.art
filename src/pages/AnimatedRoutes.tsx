@@ -1,14 +1,13 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+
 import WithNav from "../components/WithNav/WithNav";
 import WithoutNav from "../components/WithoutNav/WithoutNav";
-import AboutPage from "./AboutPage";
-import ContactPage from "./ContactPage";
-import GalleryPage from "./GalleryPage";
-import HomePage from "./HomePage";
-import OrdersPage from "./OrdersPage";
-
-
+import { HomePage } from "./HomePage/HomePage";
+import { AboutPage } from "./AboutPage/AboutPage";
+import { ContactPage } from "./ContactPage/ContactPage";
+import { GalleryPage } from "./GalleryPage/GalleryPage";
+import { OrdersPage } from "./OrdersPage/OrdersPage";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();

@@ -6,6 +6,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap");
 
+// TODO: remove unused fonts
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -78,14 +80,21 @@
   transform: scale(0);
   overflow: hidden;
   z-index: 999;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    background-color: #000000;
+  }
 }
 
-.modelOpen {
-  visibility: hidden;
-  opacity: 1;
-  transform: scale(1);
-  overflow: hidden;
-}
+// .modelOpen {
+//   visibility: hidden;
+//   opacity: 1;
+//   transform: scale(1);
+//   overflow: hidden;
+// }
 
 .closeIcon {
   position: fixed;
@@ -109,18 +118,19 @@
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 0 10px 0 rgba(1, 1, 0, 0.055);
+  text-align: center;
 
   > .galleryTitle {
     font-family: $JuliusSansOne;
-    font-size: 5rem;
-    font-size: 5vw;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    // font-size: 5vw;
+    margin-bottom: 3rem;
   }
 
   > .galleryText {
     font-family: $JuliusSansOne;
-    font-size: 1.8rem;
-    font-size: 2vw;
+    font-size: 2rem;
+    // font-size: 2vw;
 
     margin-bottom: 2rem;
     text-align: center;

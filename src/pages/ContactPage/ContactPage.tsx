@@ -1,7 +1,9 @@
-import styles from "./ContactPage.module.scss";
 import { useForm, ValidationError } from "@formspree/react";
 
-const ContactPage = () => {
+import styles from "./ContactPage.module.scss";
+
+export function ContactPage() {
+  // TODO: Add form validation, move to env
   const [state, handleSubmit] = useForm("xjvdorvl");
 
   //   if (state.succeeded) {
@@ -26,6 +28,4 @@ const ContactPage = () => {
       </button>
     </form>
   );
-};
-
-export default ContactPage;
+}
