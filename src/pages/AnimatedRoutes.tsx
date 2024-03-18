@@ -10,25 +10,37 @@ import { GalleryPage } from "./GalleryPage/GalleryPage";
 import { OrdersPage } from "./OrdersPage/OrdersPage";
 import { SignInPage } from "./SignInPage/SignInPage";
 import { AdminPage } from "./AdminPage/AdminPage";
+import { ProtectedRoute } from "../components/ProtectedRoute/ProtectedRoute";
+import { AuthProvider } from "../components/context/AuthProvider";
 
 export function AnimatedRoutes() {
   const location = useLocation();
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.pathname}>
-        <Route element={<WithoutNav />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/sign-in" element={<SignInPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-        </Route>
-        <Route element={<WithNav />}>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/orders" element={<OrdersPage />} />
-        </Route>
-      </Routes>
+      <AuthProvider>
+        <Routes location={location} key={location.pathname}>
+          <Route element={<WithoutNav />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sign-in" element={<SignInPage />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+            {/* <Route path="/admin" element={<AdminPage />} /> */}
+          </Route>
+          <Route element={<WithNav />}>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/orders" element={<OrdersPage />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </AnimatePresence>
   );
 }
