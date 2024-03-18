@@ -3,12 +3,13 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { projectStorage } from "../../firebase/config";
-import { LoadableImage } from "../../components/LoadableImage/LoadableImage";
+import { LazyImage } from "../../components/LazyImage/LazyImage";
 import { ref as dbRef, onValue } from "firebase/database";
 import { db } from "../../firebase/config";
 import { Spinner } from "../../components/Spinner/Spinner";
 
 import styles from "./GalleryPage.module.scss";
+import { HeaderSection } from "../../components/HeaderSection/HeaderSection";
 interface ImagesInfoArrayI {
   dimensions: string;
   id: string;
@@ -63,27 +64,18 @@ export function GalleryPage() {
 
   return (
     <>
-      {/* <div className={model ? "model open" : "model"}> */}
       <div className={model ? `${styles.model} ${styles.open}` : styles.model}>
         <img className={styles.modelImg} src={tempImgSrc} alt="" />
         <div onClick={() => setModel(false)} className={styles.closeIcon}>
           <CloseIcon fontSize="large" style={{ color: "white" }} />
         </div>
       </div>
-      {/* TODO: Extract to HeaderSection Component */}
-      <div className={styles.galleryHeader}>
-        <h1 className={styles.galleryTitle}>Galeria Obrazów</h1>
-        <div className={styles.galleryText}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime repudiandae fugiat corrupti? Numquam impedit
-          nisi fugiat quos, sequi iusto vero itaque provident doloribus nesciunt molestias placeat deserunt quasi soluta
-          assumenda.
-        </div>
-      </div>
+      <HeaderSection />
       <div className={styles.gallery}>
         {imagesInfoArray?.map((item, index) => {
           return (
             <div key={index} className={styles.item} onClick={() => getImg(item.link!)}>
-              <LoadableImage src={item.link!} />
+              <LazyImage src={item.link!} />
               <div className={styles.imageInfo}>
                 <h4>{item.name}</h4>
                 <h4>{item.dimensions}</h4>
