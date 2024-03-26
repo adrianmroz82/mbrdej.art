@@ -3,6 +3,8 @@ import { getStorage } from "firebase/storage";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
+import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig: FirebaseOptions = {
   apiKey: import.meta.env.VITE_APP_API_KEY,
   authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
@@ -16,8 +18,10 @@ const firebaseConfig: FirebaseOptions = {
 const app = initializeApp(firebaseConfig);
 
 const projectStorage = getStorage(app);
-const db = getDatabase();
+// const db = getDatabase();
+
+export const db = getFirestore(app);
 
 export const auth = getAuth(app);
 
-export { projectStorage, db };
+export { projectStorage };

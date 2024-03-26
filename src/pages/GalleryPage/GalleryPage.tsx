@@ -10,12 +10,14 @@ import { Spinner } from "../../components/Spinner/Spinner";
 
 import styles from "./GalleryPage.module.scss";
 import { HeaderSection } from "../../components/HeaderSection/HeaderSection";
-interface ImagesInfoArrayI {
+import { collection, getDocs } from "firebase/firestore";
+interface ImageInfo {
   dimensions: string;
-  id: string;
+  // id: string;
   name: string;
   type: string;
-  link?: string;
+  // link?: string;
+  images: string[];
 }
 
 export function GalleryPage() {
@@ -23,32 +25,29 @@ export function GalleryPage() {
   const [tempImgSrc, setTempImgSrc] = useState("");
 
   const [imagesArray, setImagesArray] = useState<string[]>([]);
-  const [imagesInfoArray, setImagesInfoArray] = useState<ImagesInfoArrayI[]>([]);
-
-  const starCountRef = dbRef(db, "imagesInfo/");
+  const [imagesInfoArray, setImagesInfoArray] = useState<ImageInfo[]>([]);
+  const [data, setData] = useState<ImageInfo[]>([]);
 
   const getImg = (imgSrc: string) => {
     setModel(true);
     setTempImgSrc(imgSrc);
   };
 
-  const fetchImages = async () => {
-    const imagesListRef = ref(projectStorage, "imagesMin/");
-    const listAllRefs = await listAll(imagesListRef);
-    const listOfUrls = await Promise.all(listAllRefs.items.map((imageRef) => getDownloadURL(imageRef)));
-    return setImagesArray(listOfUrls);
-  };
-
   useEffect(() => {
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      setImagesInfoArray(data);
-    });
-
-    fetchImages();
+    async function getImages() {
+      const querySnapshot = await getDocs(collection(db, "pictures"));
+      const imageData: ImageInfo[] = [];
+      querySnapshot.forEach((doc) => {
+        const data = doc.data() as ImageInfo;
+        imageData.push(data);
+      });
+      setData(imageData);
+    }
+    getImages();
   }, []);
+  console.log(data);
 
-  if (!imagesArray) {
+  if (!data) {
     return (
       <div>
         <Spinner />
@@ -56,9 +55,9 @@ export function GalleryPage() {
     );
   }
 
-  for (let i = 0; i < imagesInfoArray.length; i++) {
-    imagesInfoArray[i].link = imagesArray[i];
-  }
+  // for (let i = 0; i < imagesInfoArray.length; i++) {
+  //   imagesInfoArray[i].link = imagesArray[i];
+  // }
 
   const oilText = (item: string | undefined) => item === "oil" && "Olej na płótnie";
 
@@ -72,19 +71,27 @@ export function GalleryPage() {
       </div>
       <HeaderSection />
       <div className={styles.gallery}>
-        {imagesInfoArray?.map((item, index) => {
-          return (
-            <div key={index} className={styles.item} onClick={() => getImg(item.link!)}>
-              <LazyImage src={item.link!} />
-              <div className={styles.imageInfo}>
-                <h4>{item.name}</h4>
-                <h4>{item.dimensions}</h4>
-                <h4>{oilText(item.type)}</h4>
-              </div>
+        {data.map((item, index) => (
+          <div key={index} className={styles.item}>
+            {item.images.map((image, idx) => (
+              <LazyImage key={idx} src={image} onClick={() => getImg(image)} />
+            ))}
+            <div className={styles.imageInfo}>
+              <h4>{item.name}</h4>
+              <h4>{item.dimensions}</h4>
+              <h4>{oilText(item.type)}</h4>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </>
   );
 }
+
+// <>
+// {item.images?.map((img: string, index: number) => {
+//   console.log(img);
+
+//   <LazyImage key={index} src={img} />;
+// })}
+// </>
