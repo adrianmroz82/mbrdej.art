@@ -12,6 +12,7 @@ import { SignInPage } from "./SignInPage/SignInPage";
 import { AdminPage } from "./AdminPage/AdminPage";
 import { ProtectedRoute } from "../components/ProtectedRoute/ProtectedRoute";
 import { AuthProvider } from "../components/context/AuthProvider";
+import { PaintingDetailsPage } from "./PaintingDetailsPage/PaintingDetailsPage";
 
 export function AnimatedRoutes() {
   const location = useLocation();
@@ -31,13 +32,13 @@ export function AnimatedRoutes() {
                 </ProtectedRoute>
               }
             />
-            {/* <Route path="/admin" element={<AdminPage />} /> */}
           </Route>
           <Route element={<WithNav />}>
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/orders" element={<OrdersPage />} />
+            <Route path="/painting/:id" element={<PaintingDetailsPage />} />
           </Route>
         </Routes>
       </AuthProvider>
